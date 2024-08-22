@@ -2,14 +2,12 @@ import React, { useState } from "react";
 import Map, { Marker, Layer, Source } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 
-const Location = () => {
+const Location = ({locations}) => {
   const [viewState, setViewState] = useState({
     longitude: -3.7038,
     latitude: 40.4168,
     zoom: 3,
   });
-
-  // Replace with your Mapbox token
   const MAPBOX_TOKEN =
     "pk.eyJ1IjoiZ2FuZXNocGFkdmFsIiwiYSI6ImNtMDNwOWw5ZzAwNWwyaXF0cDdnZmtjeDUifQ.9saPPoutap-bdlkOWuFazg";
 
@@ -26,7 +24,7 @@ const Location = () => {
         id: "background",
         type: "background",
         paint: {
-          "background-color": "#ffffff", // Set land to white
+          "background-color": "#ffffff", 
         },
       },
       {
@@ -35,7 +33,7 @@ const Location = () => {
         source: "mapbox",
         "source-layer": "water",
         paint: {
-          "fill-color": "#add8e6", // Set water to light blue
+          "fill-color": "#add8e6",
         },
       },
       {
@@ -44,7 +42,7 @@ const Location = () => {
         source: "mapbox",
         "source-layer": "landuse",
         paint: {
-          "fill-color": "#ffffff", // Ensure land use areas are also white
+          "fill-color": "#ffffff",
         },
       },
       {
@@ -53,7 +51,7 @@ const Location = () => {
         source: "mapbox",
         "source-layer": "admin",
         paint: {
-          "line-color": "#9a9a9a", // Set country borders to black
+          "line-color": "#9a9a9a",
           "line-width": 0.2,
         },
       },
@@ -63,24 +61,24 @@ const Location = () => {
         source: "mapbox",
         "source-layer": "admin",
         paint: {
-          "line-color": "#9a9a9a", // Set region borders to black
+          "line-color": "#9a9a9a", 
           "line-width": 0,
         },
       },
     ],
   };
-  const locations = [
-    {
-      name: "United Kingdom",
-      longitude: -0.1276,
-      latitude: 51.5074,
-      sales: 467100,
-    },
-    { name: "Netherlands", longitude: 4.9041, latitude: 52.3676, sales: 22400 },
-    { name: "EIRE", longitude: -6.2603, latitude: 53.3498, sales: 18300 },
-    { name: "France", longitude: 2.3522, latitude: 48.8566, sales: 14600 },
-    { name: "Germany", longitude: 13.405, latitude: 52.52, sales: 14400 },
-  ];
+  // const locations = [
+  //   {
+  //     name: "United Kingdom",
+  //     longitude: -0.1276,
+  //     latitude: 51.5074,
+  //     sales: 467100,
+  //   },
+  //   { name: "Netherlands", longitude: 4.9041, latitude: 52.3676, sales: 22400 },
+  //   { name: "EIRE", longitude: -6.2603, latitude: 53.3498, sales: 18300 },
+  //   { name: "France", longitude: 2.3522, latitude: 48.8566, sales: 14600 },
+  //   { name: "Germany", longitude: 13.405, latitude: 52.52, sales: 14400 },
+  // ];
 
   const salesMax = Math.max(...locations.map((loc) => loc.sales));
   const radiusScale = 100000 / salesMax;
@@ -125,7 +123,7 @@ const Location = () => {
           </Map>
         </div>
         <div className="w-2/3 mx-8 ">
-          <h2>Top locations</h2>
+          <b>Top locations</b>
           <table className="w-full text-left">
             <tbody>
               {locations.map((location, index) => (

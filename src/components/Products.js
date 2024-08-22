@@ -1,14 +1,14 @@
 import React from "react";
 
-const Products = () => {
-  const products = [
-    { name: "Jumbo bag strawberry", value: 0.9, amount: "$4.7K" },
-    { name: "Party bunting", value: 0.4, amount: "$3.3K" },
-    { name: "Regency cakestand 3 tier", value: 0.2, amount: "$2.7K" },
-    { name: "Postage", value: 0.16, amount: "$1.7K" },
-    { name: "White hanging heart t-light holder", value: 0.1, amount: "$1K" },
-    // Add more products as necessary...
-  ];
+const Products = ({products}) => {
+  // const products = [
+  //   { name: "Jumbo bag strawberry", value: 0.9, amount: "$4.7K" },
+  //   { name: "Party bunting", value: 0.4, amount: "$3.3K" },
+  //   { name: "Regency cakestand 3 tier", value: 0.2, amount: "$2.7K" },
+  //   { name: "Postage", value: 0.16, amount: "$1.7K" },
+  //   { name: "White hanging heart t-light holder", value: 0.1, amount: "$1K" },
+    
+  // ];
 
   return (
     <div className="bg-white rounded-lg p-6 shadow-md">
