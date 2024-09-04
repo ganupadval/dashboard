@@ -10,7 +10,9 @@ import {
   Legend,
   PointElement,
   LineElement,
-} from "chart.js";
+} from "chart.js/auto";
+
+
 
 ChartJS.register(
   CategoryScale,
